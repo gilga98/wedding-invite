@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0A2463">
+    <meta name="theme-color" content="var(--dark-blue)">
     <meta name="author" content="Ganesh & Poornima">
     <meta name="title" content="Wedding Invitation: Ganesh weds Poornima">
     <meta name="description" content="Wedding Invitation for Ganesh and Poornima. Join us in celebrating their union with divine blessings.">
@@ -11,23 +11,48 @@
 
     <title>Wedding Invitation: Ganesh weds Poornima</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Hubballi&family=Noto+Sans+Kannada:wght@300;400;500;700&family=Noto+Sans+Kannada:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&family=Roboto:wght@300;400;500;700&display=swap&family=Hubballi&family=Noto+Sans+Kannada:wght@300;400;500;700&family=Noto+Sans+Kannada:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Lora:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         :root {
-            --gold-primary: #D4AF37;
-            --gold-secondary: #B08D57;
-            --gold-light: #FFD700;
-            --cream: #FFF8E1;
-            --dark-blue: #0A2463;
-            --darker-blue: #030E2C;
+
+    --primary: #D4AF37;
+    --primary-dark: #B08D57;
+    --accent: #FFD700;
+    --text-light: #FFF8E1;
+    --background: #063044;
+    --background-alt: #033044;
+    --primary-rgb: 212, 175, 55;
+    --accent-rgb: 255, 215, 0;
+    
+--gold-primary: var(--primary);
+            --gold-secondary: var(--primary-dark);
+            --gold-light: var(--accent);
+            --cream: var(--text-light);
+            --dark-blue: var(--dark-blue);
+            --darker-blue: var(--darker-blue);
+    text-shadow: black 0 0 2px, black 0 0 3px, black 0 0 4px;
+        }
+        
+        body, h1, h2, h3, h4, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            font-family: "Montserrat", sans-serif;
+            color: var(--cream);
+}
+        button{
+            text-shadow: black 0 0 2px, black 0 0 3px, black 0 0 4px;
+
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #0c1e3e, #1d3b6c);
+            font-family: "Montserrat", sans-serif;
+            background: linear-gradient(135deg, var(--background), var(--background-alt), var(--background));
             color: var(--cream);
             overflow-x: hidden;
             min-height: 100vh;
@@ -50,11 +75,14 @@
             font-family: 'Lora', serif;
             font-style: italic;
         }
+        .font-cursive {
+            font-family: 'Lugrasimo', cursive;
+        }
         
         .main-card {
             width: 100%;
             max-width: 900px;
-            background: linear-gradient(to bottom, rgba(10, 36, 99, 0.7), rgba(3, 14, 44, 0.3));
+            background: linear-gradient(to bottom, rgba(10, 55, 60, 0.538), rgba(12, 45, 50, 0.538), rgba(10, 55, 60, 0.538));
             backdrop-filter: blur(16px);
             border-radius: 1.5rem;
             border: 1px solid rgba(212, 175, 55, 0.3);
@@ -101,14 +129,19 @@
         }
         .text-gold-shine {
             color: var(--gold-light);
-            text-shadow: 0 0 2px var(--gold-light), 0 0 1px #B8860B;
+            text-shadow: 0 0 2px var(--gold-light), 0 0 1px #B8860B, 0 2px 5px rgba(0, 0, 0, 0.5);
         }
         .text-gold-heading {
             color: var(--gold-primary);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            text-shadow: 2px 3px 4px rgba(0,0,0,0.7);
         }
         .text-cream {
             color: var(--cream);
+        }
+
+        .text-golden-tint{
+            color: var(--gold-secondary);
+            text-shadow: 0 0 2px #000, 0 0 1px #000, 0 2px 5px rgba(0, 0, 0, 0.5);
         }
         
         .decorative-border-names {
@@ -191,6 +224,8 @@
             padding: 0.5rem 1rem;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 4px rgba(212, 175, 55, 0.5); /* Added golden shadow for highlight */
+            cursor: pointer; /* Change cursor to pointer */
         }
         
         .lang-toggle-btn:hover {
@@ -316,12 +351,15 @@
             <section class="text-center space-y-4 max-w-3xl mx-auto">
                 <p class="text-md md:text-lg text-cream">With divine blessings and joyous hearts,</p>
                 <p class="text-sm md:text-base text-cream opacity-90">
-                    <strong class="text-lg">Sri. Narasimhamurthy & the beloved memory of Smt. K.R. Narasamma</strong> 
-                    <br>
-                    <p class="text-sm">along with</p><br>
-                    <strong class="text-lg">Smt. Padma B.S. & Sri. Narayana Prasad T.N.</strong><br>
-                    <p class="text-sm">and</p><br>
-                    <strong class="text-lg">Smt. Meenakshi Rao & Sri. Anand R. Rao</strong>
+                    <strong class="text-lg text-golden-tint">Sri. Narasimhamurthy & the beloved memory of Smt. K.R. Narasamma</strong> 
+                    <br/><br/>
+                    <span class="text-sm">along with</span> 
+                    <br/><br/>
+                    <strong class="text-lg text-golden-tint">Smt. Padma B.S. & Sri. Narayana Prasad T.N.</strong>
+                    <br/><br/>
+                    <span class="text-sm">and</span> 
+                    <br/><br/>
+                    <strong class="text-lg text-golden-tint">Smt. Meenakshi Rao & Sri. Anand R. Rao</strong>
                 </p>
                 <p class="text-md md:text-lg text-cream mt-4">cordially invite you to grace the auspicious wedding ceremony of</p>
             </section>
@@ -355,59 +393,72 @@
             <div class="section-separator"></div>
 
             <section class="space-y-8 py-4">
-                <h3 class="font-lora text-2xl md:text-3xl text-center text-gold-heading mb-6">Wedding Festivities</h3>
-
+                <h3 class="font-cinzel-decorative text-gold-heading text-2xl md:text-3xl text-center mb-6">WEDDING FESTIVITIES</h3>
+              
                 <div class="max-w-3xl mx-auto">
-
-                    <div class="event-card">
-                        <h4 class="font-lora text-xl md:text-2xl text-gold-shine mb-4 flex items-center justify-center">
-                            <i data-lucide="gem" class="icon-style"></i>Wedding Muhurtham (Dharwad)
+                  <div class="flex flex-col md:flex-row gap-4">
+                    
+                    <!-- Wedding Muhurtham -->
+                    <div class="event-card flex-1 flex flex-col justify-between p-4">
+                      <div>
+                        <h4 class="text-xl md:text-2xl text-gold-shine mb-4 flex items-center justify-center">
+                          <i data-lucide="gem" class="icon-style"></i>Wedding Muhurtham
                         </h4>
+                        <h5 class="text-xl md:text-2xl text-golden-tint mb-4 flex items-center justify-center">(Dharwad)</h5>
                         <p class="text-md text-cream"><strong>Date:</strong> Monday, 4th August 2025</p>
                         <p class="text-md text-cream"><strong>Time:</strong> 4:15 AM (Mithuna Lagnam)</p>
                         <p class="text-md text-cream"><strong>Venue:</strong> B D Patil Convention Hall, Banashree Nagar last stop, HUDCO Colony, Dharwad - 580008</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <a href="https://maps.app.goo.gl/DHndpXVMA5ZsnsiK7" target="_blank" class="btn-action">
-                                <i data-lucide="map-pin" class="icon-style"></i>View on Map
-                            </a>
-                            <button onclick="addToCalendar('Muhurtham: Ganesh & Poornima (Dharwad)', '20250804T041500', '20250804T061500', 'Muhurtham ceremony in Dharwad.', 'B D Patil Convention Hall, Banashree Nagar last stop, HUDCO Colony, Dharwad')" class="btn-action">
-                                <i data-lucide="calendar-plus" class="icon-style"></i>Add to Calendar
-                            </button>
-                        </div>
+                      </div>
+                      <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                        <a href="https://maps.app.goo.gl/DHndpXVMA5ZsnsiK7" target="_blank" class="btn-action">
+                          <i data-lucide="map-pin" class="icon-style"></i>View on Map
+                        </a>
+                        <button onclick="addToCalendar('Muhurtham: Ganesh & Poornima (Dharwad)', '20250804T000000', '20250804T240000', 'Muhurtham ceremony in Dharwad.', 'B D Patil Convention Hall, Banashree Nagar last stop, HUDCO Colony, Dharwad')" class="btn-action">
+                          <i data-lucide="calendar-plus" class="icon-style"></i>Add to Calendar
+                        </button>
+                      </div>
                     </div>
-
-                    <div class="event-card">
-                        <h4 class="font-lora text-xl md:text-2xl text-gold-shine mb-4 flex items-center justify-center">
-                            <i data-lucide="ice-cream-bowl" class="icon-style"></i>Reception (Tumkur)
+              
+                    <!-- Reception -->
+                    <div class="event-card flex-1 flex flex-col justify-between p-4">
+                      <div>
+                        <h4 class="text-xl md:text-2xl text-gold-shine mb-4 flex items-center justify-center">
+                          <i data-lucide="ice-cream-bowl" class="icon-style"></i>Reception
                         </h4>
+                        <h5 class="text-xl md:text-2xl text-golden-tint mb-4 flex items-center justify-center">(Tumkur)</h5>
                         <p class="text-md text-cream"><strong>Date:</strong> Sunday, 10th August 2025</p>
                         <p class="text-md text-cream"><strong>Time:</strong> 11:30 AM onwards</p>
                         <p class="text-md text-cream"><strong>Venue:</strong> SJS Convention Hall, Upparhalli, Tumakuru - 572102</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <a href="https://maps.app.goo.gl/MBsUXNKveZEfpdJf7" target="_blank" class="btn-action">
-                                <i data-lucide="map-pin" class="icon-style"></i>View on Map
-                            </a>
-                            <button onclick="addToCalendar('Reception: Ganesh & Poornima (Tumkur)', '20250810T113000', '20250810T143000', 'Wedding Reception in Tumkur.', 'SJS Convention Hall, Upparhalli, Tumakuru')" class="btn-action">
-                                <i data-lucide="calendar-plus" class="icon-style"></i>Add to Calendar
-                            </button>
-                        </div>
+                      </div>
+                      <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                        <a href="https://maps.app.goo.gl/MBsUXNKveZEfpdJf7" target="_blank" class="btn-action">
+                          <i data-lucide="map-pin" class="icon-style"></i>View on Map
+                        </a>
+                        <button onclick="addToCalendar('Reception: Ganesh & Poornima (Tumkur)', '20250810T113000', '20250810T143000', 'Wedding Reception in Tumkur.', 'SJS Convention Hall, Upparhalli, Tumakuru')" class="btn-action">
+                          <i data-lucide="calendar-plus" class="icon-style"></i>Add to Calendar
+                        </button>
+                      </div>
                     </div>
+              
+                  </div>
                 </div>
-            </section>
+              </section>
+              
             <div class="section-separator"></div>
             <section class="text-center space-y-4 py-8">
                 <p class="text-sm text-cream opacity-90">We eagerly await your gracious presence and blessings to celebrate this joyous union.</p>
-                <h4 class="font-lora text-xl text-gold-heading pt-4">Awaiting your benign presence,</h4>
-                <p  class="text-md md:text-lg text-cream">Smt. Padma B.S. & Sri. Narayana Prasad T.N.</p>
+                <h4 class="font-lora text-xl text-gold-heading pt-4">Awaiting your kind presence,</h4>
+                <br/>
+                <strong class="text-md md:text-lg text-golden-tint">Smt. Padma B.S. & Sri. Narayana Prasad T.N.</strong>
             </section>
             
             <div class="section-separator"></div>
 
             <footer class="text-center py-8">
                 <h4 class="font-lora text-lg text-gold-heading mb-4">With Best Compliments From:</h4>
-                <p class="text-xs text-cream opacity-80">Smt. Lokamba & Sri. T.N. Ramesh & Family</p>
-                <p class="text-xs text-cream opacity-80">Smt. T.N. Suma & Sri. Kallesh Kumar & Family</p>
-                <p class="text-xs text-cream opacity-80">All Relatives & Friends</p>
+                <p class="text-sm opacity-80">Smt. Lokamba & Sri. T.N. Ramesh & Family</p>
+                <p class="text-sm opacity-80">Smt. T.N. Suma & Sri. Kallesh Kumar & Family</p>
+                <p class="text-sm opacity-80">All Relatives & Friends</p>
             </footer>
         </div>
 
@@ -424,15 +475,15 @@
             <section class="text-center space-y-4 max-w-3xl mx-auto">
                 <p class="font-kannada text-md md:text-lg text-cream">ಪರಮಪೂಜ್ಯರ ದಿವ್ಯಾನುಗ್ರಹದಿಂದ ಮತ್ತು ಹರ್ಷಚಿತ್ತದಿಂದ,</p>
                 <p class="font-kannada text-sm md:text-base text-cream opacity-90">
-                    <strong class="text-lg">ವೇ||ಬ್ರ||ಶ್ರೀ|| ನರಸಿಂಹಮೂರ್ತಿ ಮತ್ತು ದಿವಂಗತ ಶ್ರೀಮತಿ ಕೆ.ಆರ್. ನರಸಮ್ಮ</strong>
-                    <br>
-                    <p class="text-sm"> ಅವರೊಂದಿಗೆ </p>
-                    <br>
-                    <strong class="text-lg">ಶ್ರೀಮತಿ ಪದ್ಮ ಬಿ.ಎಸ್. ಮತ್ತು ಶ್ರೀ ನಾರಾಯಣ ಪ್ರಸಾದ್ ಟಿ.ಎನ್.</strong>
-                    <br>
-                    <p class="text-sm">ಹಾಗೂ </p>
-                    <br>
-                    <strong class="text-lg">ಶ್ರೀಮತಿ ಮೀನಾಕ್ಷಿ ರಾವ್ ಮತ್ತು ಶ್ರೀ ಆನಂದ್ ಆರ್. ರಾವ್</strong>
+                    <strong class="text-lg text-golden-tint">ವೇ||ಬ್ರ||ಶ್ರೀ|| ನರಸಿಂಹಮೂರ್ತಿ ಮತ್ತು ದಿವಂಗತ ಶ್ರೀಮತಿ ಕೆ.ಆರ್. ನರಸಮ್ಮ</strong>
+                    <br/><br/>
+                    <span class="text-sm"> ಅವರೊಂದಿಗೆ </span>
+                    <br/><br/>
+                    <strong class="text-lg text-golden-tint">ಶ್ರೀಮತಿ ಪದ್ಮ ಬಿ.ಎಸ್. ಮತ್ತು ಶ್ರೀ ನಾರಾಯಣ ಪ್ರಸಾದ್ ಟಿ.ಎನ್.</strong>
+                    <br/><br/>
+                    <span class="text-sm">ಹಾಗೂ </span>
+                    <br/><br/>
+                    <strong class="text-lg text-golden-tint">ಶ್ರೀಮತಿ ಮೀನಾಕ್ಷಿ ರಾವ್ ಮತ್ತು ಶ್ರೀ ಆನಂದ್ ಆರ್. ರಾವ್</strong>
                 </p>
                 <p class="font-kannada text-md md:text-lg text-cream mt-4">ಇವರು ಮಾಡುವ ವಿಜ್ಞಾಪನೆಗಳು</p>
             </section>
@@ -469,45 +520,56 @@
                     ಗುರು ಹಿರಿಯರು ನಿಶ್ಚಯಿಸಿರುವುದರಿಂದ ತಾವೆಲ್ಲರೂ ಸಕುಟುಂಬ ಸಮೇತರಾಗಿ ಆಗಮಿಸಿ ವಧು ವರರನ್ನು ಆಶೀರ್ವದಿಸಿ ,  ಯಥೋಚಿತ ಸತ್ಕಾರವನ್ನು ಸ್ವೀಕರಿಸಬೇಕಾಗಿ ಕೋರುವ,</p>
                     
                         <h4 class="font-kannada font-bold text-xl text-gold-heading pt-4">ತಮ್ಮ ಆಗಮನಾಭಿಲಾಷಿಗಳು</h4>
-                        <p class="font-kannada text-md md:text-lg text-cream text-center" >ಶ್ರೀಮತಿ ಪದ್ಮ ಬಿ.ಎಸ್. ಮತ್ತು ಶ್ರೀ ನಾರಾಯಣ ಪ್ರಸಾದ್ ಟಿ.ಎನ್.</p>
+                        <br/>
+                        <strong class="font-kannada text-md md:text-lg text-golden-tint" >ಶ್ರೀಮತಿ ಪದ್ಮ ಬಿ.ಎಸ್. ಮತ್ತು ಶ್ರೀ ನಾರಾಯಣ ಪ್ರಸಾದ್ ಟಿ.ಎನ್.</strong>
              
             </section>
 
             <div class="section-separator"></div>
 
             <section class="space-y-8 py-4">
-                <h3 class="font-kannada font-bold text-2xl md:text-3xl text-center text-gold-heading mb-6">ವಿವಾಹ ಕಾರ್ಯಕ್ರಮಗಳು</h3>
+                <h3 class="font-hubballi font-bold text-2xl md:text-3xl text-center text-gold-heading mb-6">ವಿವಾಹ ಕಾರ್ಯಕ್ರಮಗಳು</h3>
                 <div class="max-w-3xl mx-auto">
-                    <div class="event-card">
-                        <h4 class="font-kannada font-bold text-xl md:text-2xl text-gold-shine mb-4 flex items-center justify-center">
-                            <i data-lucide="gem" class="icon-style"></i>ವಿವಾಹ ಮುಹೂರ್ತ (ಧಾರವಾಡ)
-                        </h4>
-                        <p class="font-kannada text-md text-cream"><strong>ದಿನಾಂಕ:</strong> 04-08-2025, ಭಾನುವಾರ</p>
-                        <p class="font-kannada text-md text-cream"><strong>ಸಮಯ:</strong> ಬೆಳಿಗ್ಗೆ 4.15 ಕ್ಕೆ (ಶುಭ ಮಿಥುನ ಲಗ್ನ)</p>
-                        <p class="font-kannada text-md text-cream"><strong>ಸ್ಥಳ:</strong> ಬಿ ಡಿ ಪಾಟೀಲ್ ಕನ್ವೆನ್ಷನ್ ಹಾಲ್, ಬನಶ್ರೀ ನಗರ ಕೊನೆಯ ನಿಲುಗಡೆ, HUDCO ಕಾಲೋನಿ, ಧಾರವಾಡ - 580008</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <a href="https://maps.app.goo.gl/DHndpXVMA5ZsnsiK7" target="_blank" class="btn-action font-kannada">
-                                <i data-lucide="map-pin" class="icon-style"></i>ನಕ್ಷೆಯಲ್ಲಿ ನೋಡಿ
-                            </a>
-                            <button onclick="addToCalendar('ವಿವಾಹ ಮುಹೂರ್ತ: ಗಣೇಶ್ ಮತ್ತು ಪೂರ್ಣಿಮಾ (ಧಾರವಾಡ)', '20250804T041500', '20250804T061500', 'ಧಾರವಾಡದಲ್ಲಿ ವಿವಾಹ ಮುಹೂರ್ತ.', 'ಬಿ ಡಿ ಪಾಟೀಲ್ ಕನ್ವೆನ್ಷನ್ ಹಾಲ್, ಬನಶ್ರೀ ನಗರ ಕೊನೆಯ ನಿಲುಗಡೆ, HUDCO ಕಾಲೋನಿ, ಧಾರವಾಡ - 580008')" class="btn-action">
-                                <i data-lucide="calendar-plus" class="icon-style"></i>ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ
-                            </button>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="event-card flex-1 flex flex-col justify-between p-4">
+                            <div>
+                                <h4 class="font-kannada font-bold text-xl md:text-2xl text-gold-shine mb-4 flex items-center justify-center">
+                                    <i data-lucide="gem" class="icon-style"></i>ವಿವಾಹ ಮುಹೂರ್ತ
+                                </h4>
+                                <h5 class="text-xl md:text-2xl text-golden-tint mb-4 flex items-center justify-center">(ಧಾರವಾಡ)</h5>
+                        
+                                <p class="font-kannada text-md text-cream"><strong>ದಿನಾಂಕ:</strong> 04-08-2025, ಭಾನುವಾರ</p>
+                                <p class="font-kannada text-md text-cream"><strong>ಸಮಯ:</strong> ಬೆಳಿಗ್ಗೆ 4.15 ಕ್ಕೆ (ಶುಭ ಮಿಥುನ ಲಗ್ನ)</p>
+                                <p class="font-kannada text-md text-cream"><strong>ಸ್ಥಳ:</strong> ಬಿ ಡಿ ಪಾಟೀಲ್ ಕನ್ವೆನ್ಷನ್ ಹಾಲ್, ಬನಶ್ರೀ ನಗರ ಕೊನೆಯ ನಿಲುಗಡೆ, HUDCO ಕಾಲೋನಿ, ಧಾರವಾಡ - 580008</p>
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-2 justify-center">
+                                <a href="https://maps.app.goo.gl/DHndpXVMA5ZsnsiK7" target="_blank" class="btn-action font-kannada">
+                                    <i data-lucide="map-pin" class="icon-style"></i>ನಕ್ಷೆಯಲ್ಲಿ ನೋಡಿ
+                                </a>
+                                <button onclick="addToCalendar('ವಿವಾಹ ಮುಹೂರ್ತ: ಗಣೇಶ್ ಮತ್ತು ಪೂರ್ಣಿಮಾ (ಧಾರವಾಡ)', '20250804T000000', '20250804T240000', 'ಧಾರವಾಡದಲ್ಲಿ ವಿವಾಹ ಮುಹೂರ್ತ.', 'ಬಿ ಡಿ ಪಾಟೀಲ್ ಕನ್ವೆನ್ಷನ್ ಹಾಲ್, ಬನಶ್ರೀ ನಗರ ಕೊನೆಯ ನಿಲುಗಡೆ, HUDCO ಕಾಲೋನಿ, ಧಾರವಾಡ - 580008')" class="btn-action">
+                                    <i data-lucide="calendar-plus" class="icon-style"></i>ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="event-card">
-                        <h4 class="font-kannada font-bold text-xl md:text-2xl text-gold-shine mb-4 flex items-center justify-center">
-                            <i data-lucide="ice-cream-bowl" class="icon-style"></i>ಆರತಕ್ಷತೆ (ತುಮಕೂರು)
-                        </h4>
-                        <p class="font-kannada text-md text-cream"><strong>ದಿನಾಂಕ:</strong> 10-08-2025, ಭಾನುವಾರ</p>
-                        <p class="font-kannada text-md text-cream"><strong>ಸಮಯ:</strong> ಬೆಳಿಗ್ಗೆ 11.30 ರ ನಂತರ</p>
-                        <p class="font-kannada text-md text-cream"><strong>ಸ್ಥಳ:</strong> SJS ಕನ್ವೆನ್ಷನ್ ಹಾಲ್, ಉಪ್ಪಾರಹಳ್ಳಿ, ತುಮಕೂರು - 572102</p>
-                        <div class="mt-4 flex flex-wrap gap-2">
-                            <a href="https://maps.app.goo.gl/MBsUXNKveZEfpdJf7" target="_blank" class="btn-action font-kannada">
-                                <i data-lucide="map-pin" class="icon-style"></i>ನಕ್ಷೆಯಲ್ಲಿ ನೋಡಿ
-                            </a>
-                            <button onclick="addToCalendar('ಆರತಕ್ಷತೆ: ಗಣೇಶ್ ಮತ್ತು ಪೂರ್ಣಿಮಾ (ತುಮಕೂರು)', '20250810T113000', '20250810T143000', 'ತುಮಕೂರಿನಲ್ಲಿ ಆರತಕ್ಷತೆ.', 'SJS ಕನ್ವೆನ್ಷನ್ ಹಾಲ್, ಉಪ್ಪಾರಹಳ್ಳಿ, ತುಮಕೂರು - 572102')" class="btn-action font-kannada">
-                                <i data-lucide="calendar-plus" class="icon-style"></i>ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ
-                            </button>
+                        <div class="event-card flex-1 flex flex-col justify-between p-4">
+                            <div>
+                                <h4 class="font-kannada font-bold text-xl md:text-2xl text-gold-shine mb-4 flex items-center justify-center">
+                                    <i data-lucide="ice-cream-bowl" class="icon-style"></i>ಆರತಕ್ಷತೆ
+                                </h4>
+                                <h5 class="text-xl md:text-2xl text-golden-tint mb-4 flex items-center justify-center"> (ತುಮಕೂರು)</h5>
+                                <p class="font-kannada text-md text-cream"><strong>ದಿನಾಂಕ:</strong> 10-08-2025, ಭಾನುವಾರ</p>
+                                <p class="font-kannada text-md text-cream"><strong>ಸಮಯ:</strong> ಬೆಳಿಗ್ಗೆ 11.30 ರ ನಂತರ</p>
+                                <p class="font-kannada text-md text-cream"><strong>ಸ್ಥಳ:</strong> SJS ಕನ್ವೆನ್ಷನ್ ಹಾಲ್, ಉಪ್ಪಾರಹಳ್ಳಿ, ತುಮಕೂರು - 572102</p>
+                               
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <a href="https://maps.app.goo.gl/MBsUXNKveZEfpdJf7" target="_blank" class="btn-action font-kannada">
+                                    <i data-lucide="map-pin" class="icon-style"></i>ನಕ್ಷೆಯಲ್ಲಿ ನೋಡಿ
+                                </a>
+                                <button onclick="addToCalendar('ಆರತಕ್ಷತೆ: ಗಣೇಶ್ ಮತ್ತು ಪೂರ್ಣಿಮಾ (ತುಮಕೂರು)', '20250810T113000', '20250810T143000', 'ತುಮಕೂರಿನಲ್ಲಿ ಆರತಕ್ಷತೆ.', 'SJS ಕನ್ವೆನ್ಷನ್ ಹಾಲ್, ಉಪ್ಪಾರಹಳ್ಳಿ, ತುಮಕೂರು - 572102')" class="btn-action font-kannada">
+                                    <i data-lucide="calendar-plus" class="icon-style"></i>ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -517,9 +579,9 @@
 
             <footer class="text-center py-8">
                 <h4 class="font-kannada font-bold text-lg text-gold-heading mb-4">ತಮ್ಮ ಸುಖಾಗಮನವನ್ನು ಬಯಸುವವರು:</h4>
-                <p class="font-kannada text-xs text-cream opacity-80">ಶ್ರೀಮತಿ ಲೋಕಾಂಬ ಮತ್ತು ಶ್ರೀ ಟಿ.ಎನ್. ರಮೇಶ್ ಹಾಗೂ ಕುಟುಂಬ</p>
-                <p class="font-kannada text-xs text-cream opacity-80">ಶ್ರೀಮತಿ ಟಿ.ಎನ್. ಸುಮಾ ಮತ್ತು ಶ್ರೀ ಕಲ್ಲೇಶ್ ಕುಮಾರ್ ಹಾಗೂ ಕುಟುಂಬ</p>
-                <p class="font-kannada text-xs text-cream opacity-80">ಹಾಗೂ ಬಂಧು ಮಿತ್ರರು</p>
+                <p class="font-kannada text-sm text-cream opacity-80">ಶ್ರೀಮತಿ ಲೋಕಾಂಬ ಮತ್ತು ಶ್ರೀ ಟಿ.ಎನ್. ರಮೇಶ್ ಹಾಗೂ ಕುಟುಂಬ</p>
+                <p class="font-kannada text-sm text-cream opacity-80">ಶ್ರೀಮತಿ ಟಿ.ಎನ್. ಸುಮಾ ಮತ್ತು ಶ್ರೀ ಕಲ್ಲೇಶ್ ಕುಮಾರ್ ಹಾಗೂ ಕುಟುಂಬ</p>
+                <p class="font-kannada text-sm text-cream opacity-80">ಹಾಗೂ ಬಂಧು ಮಿತ್ರರು</p>
             </footer>
         </div>
     </div>
